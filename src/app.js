@@ -9,17 +9,14 @@ const par=path.join(__dirname,'../templates')
 const views=path.join(__dirname,'../views')
 app.set('view engine','hbs')
 app.set('views',views)
-
 hbs.registerPartials(par)
 app.use(express.static(htmlpath))
-
 app.get('',(req,res)=>{
     res.render('index',{
         title:'welcome',
         desc:'Developer dhana on fire'
     })
 })
-
 app.get('/about',(req,res)=>{
   res.render('about.hbs',{
     title:'about',
@@ -41,8 +38,6 @@ app.get('/weather',(req,res)=>{
     
    })
   })
-
-
 app.get('*',(req,res)=>{
     res.render("404")
 })
