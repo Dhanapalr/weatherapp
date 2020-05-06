@@ -4,6 +4,7 @@ const locate=require('./util/locate');
 const express= require('express');
 const hbs= require('hbs')
 const app=express();
+const port=process.env.PORT || 3000
 const htmlpath = path.join(__dirname,'../public')
 const par=path.join(__dirname,'../templates')
 const views=path.join(__dirname,'../views')
@@ -44,4 +45,4 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(3000);
+app.listen(port);
